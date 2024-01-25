@@ -34,8 +34,8 @@ MonoBehaviour:
     - ES3.Runtime
     - StompyRobot.SRF
     - Cinemachine
-    - rich-base.editor
     - Assembly-CSharp
+    - rich-base.editor
     - Assembly-CSharp-firstpass
     - Sirenix.OdinInspector.CompatibilityLayer.Editor
     - StompyRobot.SRDebugger.Editor

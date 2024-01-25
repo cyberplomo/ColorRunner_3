@@ -24,30 +24,19 @@ namespace Runtime.Context
             _gameSignals = injectionBinder.BindCrossContextSingletonSafely<GameSignals>();
             _inputSignals = injectionBinder.BindCrossContextSingletonSafely<InputSignals>();
 
-
-            //Injection Bindings
-            injectionBinder.Bind<IGameModel>().To<GameModel>().CrossContext().ToSingleton();
-            injectionBinder.Bind<IInputModel>().To<InputModel>().CrossContext().ToSingleton();
-            injectionBinder.Bind<IPlayerModel>().To<PlayerModel>().CrossContext().ToSingleton();
             
+            injectionBinder.Bind<IGameModel>().To<GameModel>().CrossContext().ToSingleton();
 
-            //Mediation Bindings
+            
+            
             mediationBinder.BindView<PlayerView>().ToMediator<PlayerMediator>();
             mediationBinder.BindView<InputView>().ToMediator<InputMediator>();
             mediationBinder.BindView<CameraView>().ToMediator<CameraMediator>();
-          
 
-            //Command Bindings
             
-
-            //Level Behaviour
             commandBinder.Bind(_gameSignals.onLevelInitialize).InSequence();
                
-
-        
-
-
-            //Game Initalizer    
+            
             commandBinder.Bind(_gameSignals.onGameInitialize).InSequence();
 
         }

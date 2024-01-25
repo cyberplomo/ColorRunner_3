@@ -17,14 +17,14 @@ namespace Runtime.Mediators
 
         public override void OnRegister()
         {
-            base.OnRegister();
+            
 
 
         }
 
         public override void OnRemove()
         {
-            base.OnRemove();
+            
 
             
         }

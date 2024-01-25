@@ -17,59 +17,6 @@ namespace Runtime.Mediators
 
         #endregion
 
-        public override void OnRegister()
-        {
-            base.OnRegister();
-
-            view.onMovementInputTaken += OnStartMovement;
-            view.onRotationInputTaken += OnStartRotation;
-            view.onDequeueBullet += OnDequeueBullet;
-
-            InputSignals.onDisableTouch.AddListener(OnDisableTouch);
-            InputSignals.onEnableTouch.AddListener(OnEnableTouch);
-           
-        }
-
-        public override void OnRemove()
-        {
-            base.OnRemove();
-
-            view.onMovementInputTaken -= OnStartMovement;
-            view.onDequeueBullet -= OnDequeueBullet;
-            view.onRotationInputTaken -= OnStartRotation;
-
-            InputSignals.onDisableTouch.RemoveListener(OnDisableTouch);
-            InputSignals.onEnableTouch.RemoveListener(OnEnableTouch);
-            
-        }
-
-        private void OnStartRotation(Vector3 arg0)
-        {
-           
-        }
-
-
-        private void OnDequeueBullet(int poolValue)
-        {
-            GameSignals.onTriggerDequeuePoolableObject.Dispatch(poolValue);
-        }
-
-      
-
-
-        private void OnStartMovement(float xValues, float zValues)
-        {
-          
-        }
-
-        private void OnDisableTouch()
-        {
-            view.IsAvailableForTouch = false;
-        }
-
-        private void OnEnableTouch()
-        {
-            view.IsAvailableForTouch = true;
-        }
+       
     }
 }
